@@ -41,7 +41,7 @@ const moto = [
         team: "Aprilia Racing Team",
         image: 'https://www.motociclismo.es/uploads/s1/10/25/25/68/aprilia-rs-gp-racing-motogp-2022-aleix-espargaro-maverick-vinales-04.jpeg'
       },
-      
+
 
 ];
 
@@ -52,7 +52,7 @@ const motoDocuments = moto.map(motogp => new Moto(motogp));
 mongoose
     
   //.connect('mongodb+srv://root:0810Otto0810@cluster0.3e1cg.mongodb.net/movies?retryWrites=true&w=majority', {
-    .connect('mongodb://localhost:27017/motogp', {  
+    .connect('mongodb://localhost:27017/motogp', {
   useNewUrlParser: true,
     useUnifiedTopology: true,
   })

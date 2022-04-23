@@ -20,9 +20,19 @@ const PORT = process.env.PORT;
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 
-server.use("/pilot", pilotsRoutes);
-server.use("/moto", motosRoutes);
+server.use("/pilots", pilotsRoutes);
+server.use("/motos", motosRoutes);
 
+
+
+server.use('*', (req, res, next) => {
+  const error = new Error('Route not found');
+  error.status = 404;
+  next(error);
+});
+server.use((err, req, res, next) => {
+  return res.status(err.status || 500).json(err.message || 'Unexpected error');
+});
 
 
 

@@ -15,4 +15,4 @@ const pilotSchema = new Schema({
 
 const Pilot = mongoose.model("Pilot", pilotSchema);
 
-export {Pilot};
+export { Pilot };
