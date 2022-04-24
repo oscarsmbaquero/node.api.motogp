@@ -1,3 +1,6 @@
+
+
+// import{displayPilots} from './views/view.pilots.js';
 //DEPENDENCIAS
 import express from "express";
 import dotenv from "dotenv";
@@ -5,6 +8,7 @@ import dotenv from "dotenv";
 import { connect } from "./server/config/db.js";
 
 //RUTAS
+import { userRoutes } from "./server/api/routes/user.routes.js";
 import { pilotsRoutes } from './server/api/routes/pilot.routes.js';
 import { motosRoutes } from './server/api/routes/moto.routes.js';
 
@@ -16,12 +20,18 @@ const server = express();
 connect();
 //variable PORT de env  
 const PORT = process.env.PORT;
+
+
+server.set("secretKey", "nodeRestApi"); 
+
 // enviar datos por POST
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 
+
 server.use("/pilots", pilotsRoutes);
 server.use("/motos", motosRoutes);
+server.use("/users", userRoutes);
 
 
 
@@ -41,3 +51,12 @@ server.listen(PORT, () => {
   console.log(`Node server listening on port http://localhost:${PORT}`);
 });
 
+// const addListeners = () =>{
+
+//   document.getElementById('allPilots').addEventListener('click', displayPilots);//evento para traer todos los pilotos'
+// }
+
+
+// window.addListeners('load', (event) => {
+//   console.log('page is fully loaded');
+// });
