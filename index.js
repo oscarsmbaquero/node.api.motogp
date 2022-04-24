@@ -3,17 +3,17 @@
 // import{displayPilots} from './views/view.pilots.js';
 //DEPENDENCIAS
 import express from "express";
-import dotenv from "dotenv";
+import  "dotenv/config";
 //FUNCION DE LLAMADA
-import { connect } from "./server/config/db.js";
+import { DB_URL, connect } from "./server/config/db.js";
 
 //RUTAS
 import { userRoutes } from "./server/api/routes/user.routes.js";
 import { pilotsRoutes } from './server/api/routes/pilot.routes.js';
 import { motosRoutes } from './server/api/routes/moto.routes.js';
+import { circuitRoutes } from './server/api/routes/circuit.routes.js';
 
-//configuración dotenv. 
-dotenv.config();
+
 //creo servidor express
 const server = express();
 //conectamos a traves de la funcion de mongo
@@ -29,9 +29,11 @@ server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 
 
+
 server.use("/pilots", pilotsRoutes);
 server.use("/motos", motosRoutes);
 server.use("/users", userRoutes);
+server.use("/circuits", circuitRoutes);
 
 
 

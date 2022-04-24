@@ -1,15 +1,14 @@
 //IMPORTAMOS LAS DEPENDENCIAS
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+import 'dotenv/config';
 
-dotenv.config();
 
-const MONGODB = process.env.MONGODB;
+const DB_URL = process.env.DB_URL;
 
 //Creamos la función que conecta nuestro server con Mongo
 const connect = async () => {
   try {
-    const DB = await mongoose.connect(MONGODB, {
+    const DB = await mongoose.connect(DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -22,4 +21,4 @@ const connect = async () => {
 };
 
 //Exportamos la función connect para poder usarla en el index.js
-export {connect}
+export { DB_URL, connect}

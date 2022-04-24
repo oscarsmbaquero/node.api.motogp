@@ -86,7 +86,7 @@ const loginUser = async (req, res, next)=>{
           // Response
           return res.json({
             status: 200,
-            message: 'Loggin success!',
+            message: httpStatusCode[200],
             data: {
               userId: user._id,
               token: token

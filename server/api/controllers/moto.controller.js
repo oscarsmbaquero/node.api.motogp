@@ -16,7 +16,10 @@ const getMotos = async (req,res,next) =>{
     }
 };
 
-const createMotos =  async (req, res, next) =>{
+const createMotos =  async  (req, res, next) =>{
+
+  
+  //const picture = req.file_url || null;
     try {
         const newMoto = new Moto({
 
@@ -24,8 +27,9 @@ const createMotos =  async (req, res, next) =>{
             cv : req.body.cv,
             weight : req.body.weight,
             team : req.body.team,
+            //image : picture
             image : req.body.image
-        })
+        });
         const newMotoDB = await newMoto.save();
         return res.json({
             status: 201,

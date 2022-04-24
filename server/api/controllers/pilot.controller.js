@@ -4,7 +4,7 @@ import { httpStatusCode } from "../../utils/httpStatusCode.js";
 
 const getPilots = async ( req, res, next) =>{
     try {
-        const pilots = await Pilot.find();
+        const pilots = await Pilot.find().populate(({path:'moto', select :'team'}));;
         //return res.status(200).json(pilots);
         console.log(pilots);
         return res.json({
@@ -104,5 +104,39 @@ const findPilotByName = async(req,res,next) => {
     }
 };
 
+const addMoto = async (req, res, next) => {
+  try {
+      
+    const { motoId } = req.body;
+    const { pilotId } = req.body;
+    console.log('motoId =' + motoId);
+    console.log('pilotId =' + pilotId);
+    const updatedPilot = await Pilot.findByIdAndUpdate(
+      pilotId,
+        { $push: { moto: motoId } },
+        { new: true }
+    );
+    return res.status(200).json(updatedPilot);
+} catch (error) {
+    return next(error);
+}
+}
 
-export { getPilots, createPilots, getPilotById, findPilotByName, editPilot, deleteMoto };
+// router.put('/add-movie', async (req, res, next) => {
+//   try {
+      
+//       const { actorId } = req.body;
+//       const { movieId } = req.body;
+//       const updatedMovie = await Movie.findByIdAndUpdate(
+//           movieId,
+//           { $push: { actor: actorId } },
+//           { new: true }
+//       );
+//       return res.status(200).json(updatedMovie);
+//   } catch (error) {
+//       return next(error);
+//   }
+// });
+
+
+export { getPilots, createPilots, getPilotById, findPilotByName, editPilot, deleteMoto, addMoto };

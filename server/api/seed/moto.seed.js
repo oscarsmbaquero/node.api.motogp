@@ -51,8 +51,8 @@ const motoDocuments = moto.map(motogp => new Moto(motogp));
 // pero nos desconectaremos tras insertar los documentos
 mongoose
     
-  //.connect('mongodb+srv://root:0810Otto0810@cluster0.3e1cg.mongodb.net/movies?retryWrites=true&w=majority', {
-    .connect('mongodb://localhost:27017/motogp', {
+.connect('mongodb+srv://root:0810Otto0810@cluster0.ejpzh.mongodb.net/motogp?retryWrites=true&w=majority', {
+    //.connect('mongodb://localhost:27017/motogp', {
   useNewUrlParser: true,
     useUnifiedTopology: true,
   })

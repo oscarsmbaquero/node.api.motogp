@@ -10,7 +10,7 @@ const motoSchema = new Schema({
   cv: { type: Number, required: true },
   weight: { type: Number, required: false },
   team: { type: String, required: false },
-  image: { type: String, required: true },
+  image: { type: String, required:  false },
 });
 
 const Moto = mongoose.model("Moto", motoSchema);

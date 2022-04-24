@@ -8,8 +8,11 @@ const Schema = mongoose.Schema;
 const circuitSchema = new Schema({
   name: { type: String, required: true },
   country: { type: String, required: true },
-  recordLap: { type: String, required: false },
+  // recordLap: { type: String, required: false },
   image: { type: String, required: false },
+
+  recordLap: [{ type: mongoose.Types.ObjectId, ref: 'Pilot' }],
+
 });
 
 const Circuit = mongoose.model("Circuit", circuitSchema);
