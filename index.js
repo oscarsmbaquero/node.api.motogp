@@ -7,11 +7,12 @@ import  "dotenv/config";
 //FUNCION DE LLAMADA
 import { DB_URL, connect } from "./server/config/db.js";
 
-//RUTAS
+//IMPORTACION DE RUTAS
 import { userRoutes } from "./server/api/routes/user.routes.js";
 import { pilotsRoutes } from './server/api/routes/pilot.routes.js';
 import { motosRoutes } from './server/api/routes/moto.routes.js';
-import { circuitRoutes } from './server/api/routes/circuit.routes.js';
+import { circuitRoutes } from './server/api/routes/circuit.routes.js';//circuitRoutes
+import { calendarRoutes } from './server/api/routes/calendar.routes.js';
 
 
 //creo servidor express
@@ -29,11 +30,12 @@ server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 
 
-
+//RUTAS
 server.use("/pilots", pilotsRoutes);
 server.use("/motos", motosRoutes);
 server.use("/users", userRoutes);
 server.use("/circuits", circuitRoutes);
+server.use("/calendary",calendarRoutes);
 
 
 
@@ -59,6 +61,7 @@ server.listen(PORT, () => {
 // }
 
 
-// window.addListeners('load', (event) => {
-//   console.log('page is fully loaded');
-// });
+// window.onload = () => {
+//   addListeners();
+  
+// };

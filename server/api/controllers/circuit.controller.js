@@ -6,7 +6,7 @@ const getCircuits = async (req,res,next) =>{
 
     try {
         const motos = await Circuit.find().populate({
-            path: 'recordLap', select :'name',populate: ({ path: 'moto' , select :'mark'})
+            path: 'recordLap', select :'name',populate:({ path: 'moto' , select :'mark'})
           });
         return res.json({
            status :200,
