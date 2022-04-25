@@ -1,0 +1,30 @@
+
+
+.body{
+ background-image:url("../assets/motogp.png");
+ background-repeat: no-repeat;
+ background-size:cover;
+}
+
+.section1{
+    margin-top: 15rem;
+    margin-right:1rem;
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+}
+
+.button{
+    background-color: red;
+    width: 8rem;
+    height: 3rem;
+    margin-right: 5rem;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    background-color: white;
+    /* background-image:url("../assets/button.png"); */
+    transform: rotate(8deg);
+    transition-duration: 1s;
+}

@@ -12,14 +12,11 @@ const getMotos = async (req,res,next) =>{
            data : { motos: motos},
         });
     } catch (error) {
-        return next(error)        
+        return next(error)
     }
 };
 
-const createMotos =  async  (req, res, next) =>{
-
-  
-  //const picture = req.file_url || null;
+const createMotos =  async  (req, res, next) =>{  
     try {
         const newMoto = new Moto({
 
