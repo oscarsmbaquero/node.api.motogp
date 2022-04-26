@@ -4,14 +4,15 @@ import { httpStatusCode } from "../../utils/httpStatusCode.js";
 
 const getPilots = async ( req, res, next) =>{
     try {
-        const pilots = await Pilot.find().populate(({path:'moto', select :'team'}));;
-        //return res.status(200).json(pilots);
-        console.log(pilots);
-        return res.json({
-           status : 200,
-           message : httpStatusCode[200],
-           data : { pilots: pilots },
-        });        
+        const pilots = await Pilot.find().populate(({path:'moto', select :'team'}));
+        return res.status(200).json(pilots);
+        // console.log(pilots);
+        // return res.json({
+        //    status : 200,
+        //    message : httpStatusCode[200],
+        //    data : { pilots: pilots },
+        // });        
+        //res.send(pilots);
     } catch (error) {
         return next(error)
     }
@@ -109,8 +110,8 @@ const addMoto = async (req, res, next) => {
       
     const { motoId } = req.body;
     const { pilotId } = req.body;
-    console.log('motoId =' + motoId);
-    console.log('pilotId =' + pilotId);
+    // console.log('motoId =' + motoId);
+    // console.log('pilotId =' + pilotId);
     const updatedPilot = await Pilot.findByIdAndUpdate(
       pilotId,
         { $push: { moto: motoId } },

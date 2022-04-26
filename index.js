@@ -1,9 +1,10 @@
 
-
 // import{displayPilots} from './views/view.pilots.js';
 //DEPENDENCIAS
 import express from "express";
 import  "dotenv/config";
+import cors from 'cors';
+
 //FUNCION DE LLAMADA
 import { DB_URL, connect } from "./server/config/db.js";
 
@@ -28,6 +29,7 @@ server.set("secretKey", "nodeRestApi");
 // enviar datos por POST
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
+server.use(cors('*'));
 
 
 //RUTAS
