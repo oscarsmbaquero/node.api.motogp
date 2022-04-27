@@ -16,7 +16,7 @@ const getCircuits = async (req,res,next) =>{
         // });
         res.send(circuits);
     } catch (error) {
-        return next(error)        
+        return next(error);
     }
 };
 const createCircuit = async ( req, res, next) => {

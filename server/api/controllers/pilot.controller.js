@@ -3,16 +3,18 @@ import { httpStatusCode } from "../../utils/httpStatusCode.js";
 
 
 const getPilots = async ( req, res, next) =>{
+  console.log('Entro');
     try {
         const pilots = await Pilot.find().populate(({path:'moto', select :'team'}));
+        console.log(pilots);
         return res.status(200).json(pilots);
         // console.log(pilots);
         // return res.json({
         //    status : 200,
         //    message : httpStatusCode[200],
         //    data : { pilots: pilots },
-        // });
-        //res.send(pilots);
+        //});
+        res.send(pilots);
     } catch (error) {
         return next(error)
     }
