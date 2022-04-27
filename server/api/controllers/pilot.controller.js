@@ -11,7 +11,7 @@ const getPilots = async ( req, res, next) =>{
         //    status : 200,
         //    message : httpStatusCode[200],
         //    data : { pilots: pilots },
-        // });        
+        // });
         //res.send(pilots);
     } catch (error) {
         return next(error)
@@ -123,21 +123,25 @@ const addMoto = async (req, res, next) => {
 }
 }
 
-// router.put('/add-movie', async (req, res, next) => {
-//   try {
+const createPilotsFile = async ( req, res, next) => {
+
+  try {
+      const pilotPicture = req.file_url;
       
-//       const { actorId } = req.body;
-//       const { movieId } = req.body;
-//       const updatedMovie = await Movie.findByIdAndUpdate(
-//           movieId,
-//           { $push: { actor: actorId } },
-//           { new: true }
-//       );
-//       return res.status(200).json(updatedMovie);
-//   } catch (error) {
-//       return next(error);
-//   }
-// });
+      const newPilot = new Pilot({
+          name: req.body.name,
+          dorsal: req.body.dorsal,
+          nacionality: req.body.nacionality,
+          image: pilotPicture
+      });
+      
+      const createdPilot = await newPilot.save();
+      return res.status(201).json(createdPilot);
+  } catch (error) {
+      
+      next(error);
+  }
+};
 
 
-export { getPilots, createPilots, getPilotById, findPilotByName, editPilot, deleteMoto, addMoto };
+export { getPilots, createPilots, getPilotById, findPilotByName, editPilot, deleteMoto, addMoto, createPilotsFile };

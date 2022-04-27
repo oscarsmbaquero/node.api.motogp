@@ -8,9 +8,9 @@ const Schema = mongoose.Schema;
 const pilotSchema = new Schema({
   name: { type: String, required: true },
   dorsal: { type: Number, required: true },
-  nacionality: { type: String, required: false },
+  nacionality: { type: String, required: true },
   // team: { type: String, required: false },
-  image: { type: String, required: true },
+  image: { type: String, required: false },
 
   moto: [{ type: mongoose.Types.ObjectId, ref: 'Moto' }],
 });

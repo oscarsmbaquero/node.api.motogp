@@ -59,13 +59,13 @@ const pilots = [
         name: 'Jorge Lorenzo',
         dorsal: 99,
         nacionality: 'Spain',
-        image: 'https://photos.motogp.com/riders/6/9/69b5c348-2840-4dc1-bf7b-457c0683222c/profile/main/20-Fabio-Quartararo@1x.png'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnkGziUre2qSglULKPnxtQWEizwf7g4sWz1XU8agbwRvvzcG6cIJcEITGtqmK1C-ELlAQ&usqp=CAU'
       },
       {
-        name: 'Otto',
-        dorsal: 8,
+        name: 'Angel Nieto',
+        dorsal: 12+1,
         nacionality: 'Spain',
-        image: 'https://photos.motogp.com/riders/6/9/69b5c348-2840-4dc1-bf7b-457c0683222c/profile/main/20-Fabio-Quartararo@1x.png'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5HhhImgmpKKS7ipvffEaxctZkuEAkS0fr5A&usqp=CAU'
       }
 
 ];

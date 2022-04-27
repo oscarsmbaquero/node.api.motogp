@@ -3,14 +3,18 @@ import { httpStatusCode } from "../../utils/httpStatusCode.js";
 
 const getCircuits = async (req,res,next) =>{
     try {
-        const motos = await Circuit.find().populate({
+      console.log('Entro');
+        const circuits = await Circuit.find()
+        .populate({
             path: 'recordLap', select :'name',populate:({ path: 'moto' , select :'mark'})
           });
-        return res.json({
-           status :200,
-           message : httpStatusCode[200],
-           data : { motos: motos},
-        });
+        //  return res.status(200).json(circuits);
+        // return res.json({
+        //    status :200,
+        //    message : httpStatusCode[200],
+        //    data : { circuits: circuits},
+        // });
+        res.send(circuits);
     } catch (error) {
         return next(error)        
     }

@@ -8,12 +8,12 @@ const getCalendar = async (req,res,next) =>{
     try {
         //const calendar = await Calendar.find()
         const calendar = await Calendar.find().populate({path: 'name' , select :'country', populate:({ path:'recordLap', select : 'name', populate:({ path:'moto', select : 'team'})})});
-          
-        return res.json({
-           status :200,
-           message : httpStatusCode[200],
-           data : { calendary: calendar},
-        });
+        return res.status(200).json(calendar); 
+        // return res.json({
+        //    status :200,
+        //    message : httpStatusCode[200],
+        //    data : { calendary: calendar},
+        // });
     } catch (error) {
         return next(error)
         

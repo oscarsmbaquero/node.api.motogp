@@ -11,28 +11,28 @@ const moto = [
         cv: 250,
         weight: 157,
         team: "Yamaha Racing Team",
-        image: 'https://www.motociclismo.es/uploads/s1/10/23/30/58/yamaha-yzr-m1-monster-motogp-2022-fabio-quartararo-franco-morbidelli-03_1_1000x575.jpeg'
+        image: 'https://i.pinimg.com/originals/e2/35/7b/e2357b9a6f4beda4e3d15001c4d71e5d.png'
       },
       {
         mark: 'Honda RC213V',
         cv: 245,
         weight: 160,
         team: "Repsol Honda",
-        image: 'https://s1.eestatic.com/2022/02/08/deportes/motor/648695408_221693379_1706x960.jpg'
+        image: 'https://www.marcmarquez93.com/wp-content/themes/mm93/images/2022-RC213V-11.png'
       },
       {
         mark: 'Ducati GP22',
         cv: +250,
         weight: 157,
         team: "Ducati",
-        image: 'https://images.ctfassets.net/x7j9qwvpvr5s/6sOrXwaoSuRHTc8kuK3Y9i/747d05349e86f46b420b226e3599c678/MGP22-Team-Launch-Desmosedici-GP-01-gallery-906x510.jpg'
+        image: 'https://images.ctfassets.net/x7j9qwvpvr5s/5eT74INnjIR0vP6qTrDtyz/435cd2434e8f6ed294fda77c1a42064d/MGP22-Team-Launch-Bike-Intro-1060x650.png'
       },
       {
         mark: 'KTM RC16',
         cv: 250,
         weight: 157,
         team: "Ducati",
-        image: 'https://super7moto.com/directorio/images/2018/COMPETICIONES/Dakar/341684_Dani_Pedrosa_Red_Bull_KTM_Factory_Racing_Private_MotoGP_Test_Red_Bull_Ring_27052020___9_.jpg'
+        image: 'https://super7moto.com/directorio/images/2022/MotoGP/KTM/2022_MotoGP_launch_RC16_Oliveira.jpg'
       },
       {
         mark: 'Aprilia RS-GP',

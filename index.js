@@ -1,5 +1,5 @@
 
-// import{displayPilots} from './views/view.pilots.js';
+
 //DEPENDENCIAS
 import express from "express";
 import  "dotenv/config";
@@ -16,11 +16,13 @@ import { circuitRoutes } from './server/api/routes/circuit.routes.js';//circuitR
 import { calendarRoutes } from './server/api/routes/calendar.routes.js';
 
 
+
+
 //creo servidor express
 const server = express();
 //conectamos a traves de la funcion de mongo
 connect();
-//variable PORT de env  
+//variable PORT de env
 const PORT = process.env.PORT;
 
 

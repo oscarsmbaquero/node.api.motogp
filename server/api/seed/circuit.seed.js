@@ -86,7 +86,7 @@ const circuits = [
         name: 'Red Bull Ring',
         country: 'Austria',
         //recordLap: "Jorge Martin",
-        image: ''
+        image: 'https://www.epaddock.it/wp-content/uploads/2022/02/Red-Bull-Ring-Air-View-1.jpg'
       },
       {
         name: 'Misano Marco Simoncelli',
