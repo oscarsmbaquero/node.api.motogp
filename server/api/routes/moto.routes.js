@@ -1,5 +1,7 @@
 // DEPENDENCIAS
 import express from "express";
+
+import {isAuth} from '../../authentication/jwt.js';
 // FUNCIONES
 import { getMotos,
         createMotos,
@@ -18,7 +20,7 @@ motosRoutes.post("/", [upload.single('picture'), uploadToCloudinary], createMoto
 motosRoutes.get("/:motoID", getMotoById);
 motosRoutes.get("/mark/:mark", findMotoByName);
 motosRoutes.put("/modify/:motoID", editMoto);
-motosRoutes.delete("/delete/:motoID", deleteMoto);
+motosRoutes.delete("/delete/:motoID",[isAuth], deleteMoto);
 
 
 export {  motosRoutes };

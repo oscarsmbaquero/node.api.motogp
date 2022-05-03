@@ -28,6 +28,7 @@ const PORT = process.env.PORT;
 
 server.set("secretKey", "nodeRestApi"); 
 
+
 // enviar datos por POST
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
