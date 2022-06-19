@@ -85,10 +85,11 @@ const loginUser = async (req, res, next)=>{
       
           // Response
           return res.json({
-            status: 200,
-            message: httpStatusCode[200],
-            data: {
-              userId: user._id,
+            // status: 200,
+            // message: httpStatusCode[200],
+            user: {
+              user: user._id,
+              email: user.email,
               token: token
             },
           });
