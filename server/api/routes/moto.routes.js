@@ -20,7 +20,7 @@ motosRoutes.post("/", [upload.single('picture'), uploadToCloudinary], createMoto
 motosRoutes.get("/:motoID", getMotoById);
 motosRoutes.get("/mark/:mark", findMotoByName);
 motosRoutes.put("/modify/:motoID", editMoto);
-motosRoutes.delete("/delete/:motoID",[isAuth], deleteMoto);
+motosRoutes.delete("/delete/:motoID",[isAuth], deleteMoto);//commit 
 
 
 export {  motosRoutes };
