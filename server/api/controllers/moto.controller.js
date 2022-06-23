@@ -45,8 +45,8 @@ const getMotoById = async (req, res, next) => {
       const motoByID = await Moto.findById(motoID);
   
       return res.json({
-        status: 200,
-        message: httpStatusCode[200],
+        // status: 200,
+        // message: httpStatusCode[200],
         data: { moto: motoByID },
       });
     } catch (error) {

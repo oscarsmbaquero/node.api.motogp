@@ -9,11 +9,11 @@ const getPilots = async ( req, res, next) =>{
         console.log(pilots);
         return res.status(200).json(pilots);
          console.log(pilots);
-        // return res.json({
-        //    status : 200,
-        //    message : httpStatusCode[200],
-        //    data : { pilots: pilots },
-        //});
+        return res.json({
+          //  status : 200,
+          //  message : httpStatusCode[200],
+           data : { pilots: pilots },
+        });
         res.send(pilots);
     } catch (error) {
         return next(error)
@@ -25,7 +25,7 @@ const createPilots = async ( req, res, next) => {
     try {
         const newPilot = new Pilot({
             name : req.body.name,
-            age : req.body.age,
+            dorsal : req.body.dorsal,
             nacionality : req.body.nacionality,
             // team : req.body.team,
             image : req.body.image,
@@ -49,8 +49,8 @@ const getPilotById = async (req, res, next) => {
       const pilotoByID = await Pilot.findById(pilotID);
   
       return res.json({
-        status: 200,
-        message: httpStatusCode[200],
+        // status: 200,
+        // message: httpStatusCode[200],
         data: { pilot: pilotoByID },
       });
     } catch (error) {
@@ -62,7 +62,7 @@ const findPilotByName = async(req,res,next) => {
     const {name} = req.params;
     console.log(name);
     try {
-      const pilotByName = await Pilot.find({name: name});
+      const pilotByName = await Pilot.find({name: name}).populate(({path:'moto', select :'team'}));
       return res.json({
         // status: 200,
         // message: httpStatusCode[200],
